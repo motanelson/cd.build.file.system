@@ -1,4 +1,5 @@
-# vba.progman
+# ram.drive
 
 
-progman write to exel vba
+text file system ram drive
+ mouts a ram drive on memory of text files
