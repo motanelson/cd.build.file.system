@@ -105,10 +105,14 @@ class TreeNode:
     def __repr__(self, level=0):
         indent = " " * (level * 4)
         result=""
-        aaa=parser(self.content)
-       
-        for n in aaa:
-            result =result+n+"\n"
+        bbb=self.content.split(";")
+        for bb in bbb:
+            aaa=parser(bb)
+            if len(aaa)<1:
+                result =result+indent+bb+"\n"
+            else:
+                for n in aaa:
+                    result =result+indent+n+"\n"
         
         for child in self.children:
             result += child.__repr__(level + 1)
