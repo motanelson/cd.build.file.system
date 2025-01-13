@@ -1,4 +1,7 @@
+global counter
+counter=0
 def parser(a):
+    global counter
     list1=[""]
     list2=[]
     list3=[]
@@ -57,13 +60,13 @@ def parser(a):
             if s=="\"" and sstarts:
                 starts=not(starts)
             t=False
-    counter=0
+    #counter=0
     counter2=0
     counter3=0
     counter4=0
     counter5=0
     vars0=0
-    counter=0
+    #counter=0
     ttrue=True
     for b in range(len(list3)):
         if list2[list3[b]]==")":
@@ -101,12 +104,15 @@ class TreeNode:
 
     def __repr__(self, level=0):
         indent = " " * (level * 4)
-        result = f"{indent}{self.content};\n"
+        result=""
+        aaa=parser(self.content)
+       
+        for n in aaa:
+            result =result+n+"\n"
+        
         for child in self.children:
             result += child.__repr__(level + 1)
-            aaa=parser(result)
-            for n in aaa:
-                print(n)
+            
         return result
 
 
